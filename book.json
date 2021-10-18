@@ -1,15 +1,15 @@
 {
     "plugins": [
-		"-search",
-		"expandable-chapters-small",
-		"insert-logo",
+        "-search",
+        "expandable-chapters-small",
+        "insert-logo",
         "hide-element",
-		"back-to-top-button",
-		"chapter-fold",
-		"code",
-		"splitter",
-		"pageview-count",
-		"splitter"
+        "back-to-top-button",
+        "chapter-fold",
+        "code",
+        "splitter",
+        "pageview-count",
+        "splitter"
     ],
     "pluginsConfig": {
         "hide-element": {
