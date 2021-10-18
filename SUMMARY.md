@@ -1,6 +1,6 @@
 # Summary
 
-* [Introduction](README.md)
+* [Home Page](README.md)
 * Part I
   * [page I](part1/page-1.md)
   * [page II](part1/page-2.md)
