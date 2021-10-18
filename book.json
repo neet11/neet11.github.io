@@ -15,9 +15,9 @@
         "hide-element": {
             "elements": [".gitbook-link"]
         },
-	    "insert-logo": {
-			"url": "images/logo.png",
-			"style": "background: none; max-height: 30px; min-height: 30px"
-		}	
+        "insert-logo": {
+            "url": "images/logo.png",
+            "style": "background: none; max-height: 30px; min-height: 30px"
+        }	
     }
 }
