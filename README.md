@@ -1,3 +1,2 @@
-# blog demo
-### https://neet11.github.io/
+# [blog demo](https://neet11.github.io/)
 
