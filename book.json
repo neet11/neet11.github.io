@@ -33,8 +33,6 @@
         "tbfed-pagefooter@^0.0.1",
         "expandable-chapters-small@^0.1.7",
         "sectionx@^3.1.0",
-        "donate@^1.0.2",
-        "local-video@^1.0.1",
         "anchor-navigation-ex@0.1.8",
         "favicon@^0.0.2",
         "3-ba@^0.9.0",
@@ -45,9 +43,7 @@
         "musicxml@^1.0.2",
         "klipse@^1.2.0",
         "versions-select@^0.1.1",
-        "rss@^3.0.2",
         "-sharing",
-        "sharing-plus@^0.0.2",
         "graph@^0.1.0",
         "chart@^0.2.0"
     ],
@@ -79,14 +75,6 @@
         "3-ba": {
             "token": "ff100361cdce95dd4c8fb96b4009f7bc"
         },
-        "donate": {
-            "wechat": "https://zhangjikai.com/resource/weixin.png",
-            "alipay": "https://zhangjikai.com/resource/alipay.png",
-            "title": "",
-            "button": "赏",
-            "alipayText": "支付宝打赏",
-            "wechatText": "微信打赏"
-        },
         "simple-page-toc": {
             "maxDepth": 3,
             "skipFirstH1": true
@@ -112,19 +100,6 @@
             "copyButtons": true,
             "fade": false,
             "style": "flat"
-        },
-
-        "rss": {
-            "title": "GitBook 使用教程",
-            "description": "记录 GitBook 的配置和一些插件的使用",
-            "author": "Jikai Zhang",
-            "feed_url": "http://gitbook.zhangjikai.com/rss",
-            "site_url": "http://gitbook.zhangjikai.com/",
-            "managingEditor": "me@zhangjikai.com",
-            "webMaster": "me@zhangjikai.com",
-            "categories": [
-                "gitbook"
-            ]
         }
     }
 }
