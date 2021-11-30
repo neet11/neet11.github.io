@@ -2,7 +2,7 @@
 这个文件相当于一本Gitbook的简介
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.bootcdn.net/ajax/libs/gitalk/1.7.2/gitalk-component.js">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js">
     var gitalk = new Gitalk({
         id: 'location.hash',
         clientID: '05cb0f1a7375170c1450',

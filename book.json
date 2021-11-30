@@ -16,6 +16,7 @@
         "-search",
         "-highlight",
         "-livereload",
+        "hide-element",
         "search-plus@^0.0.11",
         "simple-page-toc@^0.1.1",
         "github@^2.0.0",
@@ -49,6 +50,9 @@
     ],
 
     "pluginsConfig": {
+        "hide-element": {
+            "elements": [".gitbook-link"]
+        },
         "theme-default": {
             "showLevel": true
         },
