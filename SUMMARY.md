@@ -1,15 +1,17 @@
 # Summary
 
-* **[Home Page](README.md)**
-* Part I
-  * [page I](part1/page-1.md)
-  * [page II](part1/page-2.md)
-  * [page III](part1/page-3.md) 
-* Part II
-  * [page I](part2/page-1.md)
-  * [page II](part2/page-2.md)
-  * [page III](part2/page-3.md) 
-* Part II
-  * [page I](part3/page-1.md)
-  * [page II](part3/page-2.md)
-  * [page III](part3/page-3.md) 
+* [Introduction](README.md)
+* [基本安装](howtouse/README.md)
+    * [Node.js安装](howtouse/Nodejsinstall.md)
+    * [Gitbook安装](howtouse/gitbookinstall.md)
+    * [Gitbook命令行速览](howtouse/gitbookcli.md)
+* [图书项目结构](book/README.md)
+    * [README.md 与 SUMMARY编写](book/file.md)
+    * [目录初始化](book/prjinit.md)
+* [图书输出](output/README.md)
+    * [输出为静态网站](output/outfile.md)
+    * [输出PDF](output/pdfandebook.md)
+* [发布](publish/README.md)
+    * [发布到Github Pages](publish/gitpages.md)
+* [结束](end/README.md)
+
