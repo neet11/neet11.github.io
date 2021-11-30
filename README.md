@@ -2,7 +2,9 @@
 这个文件相当于一本Gitbook的简介
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<div id="gitalk-container"></div>
+<script>
     var gitalk = new Gitalk({
         id: 'location.hash',
         clientID: '05cb0f1a7375170c1450',
@@ -15,4 +17,3 @@
     })
     gitalk.render('gitalk-container');
 </script>
-<div id="gitalk-container"></div>
