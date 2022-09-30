@@ -11,27 +11,13 @@
  # @Author       : neet11 neetwy@163.com
  # @Date         : 2022-09-27 03:01:36
  # @LastEditors  : neet11 neetwy@163.com
- # @LastEditTime : 2022-09-30 13:05:49
+ # @LastEditTime : 2022-09-30 13:30:17
  # @FilePath     : /shell/config-dev-env/install_golang.sh
 ### 
 
 
 # global environment variable
 go_sdk_version=1.19.1
-
-# config files
-echo "
-#GOROOT PATH
-export GOROOT=/usr/local/go
-#GOBIN PATH
-export GOBIN=\$GOROOT/bin
-#GOHOME PATH
-export GOPATH=\$HOME/go
-export PATH=\$PATH:\$GOPATH:\$GOBIN:\$GOROOT 
-" | sudo tee -a /etc/profile > /dev/null
-
-# shellcheck source=/dev/null
-source /etc/profile
 
 # define:info(32green) warn(31red) process(33yellow)
 function print_color () {
@@ -60,6 +46,25 @@ function help() {
   echo "    -h          : display this help and exit"
   echo "    -v          : input golang version default 1.19.1"
   exit 1
+}
+
+# config files
+function config_profile() {
+  print_color "green" "config_profile"
+  print_color "blue" "append go env to /etc/profile"
+  echo "
+  #GOROOT PATH
+  export GOROOT=/usr/local/go
+  #GOBIN PATH
+  export GOBIN=\$GOROOT/bin
+  #GOHOME PATH
+  export GOPATH=\$HOME/go
+  export PATH=\$PATH:\$GOPATH:\$GOBIN:\$GOROOT 
+  " | sudo tee -a /etc/profile > /dev/null
+  check_command_status "config_profile"
+
+  # shellcheck source=/dev/null
+  source /etc/profile
 }
  
 # get golang sdk url
@@ -104,7 +109,7 @@ function create_go_path() {
 # entry function 
 function run_install_golang() {
   print_color "green" "run_install_golang"
-  wget_sdk_url && install_go_sdk && config_go_env && create_go_path && \
+  config_profile && wget_sdk_url && install_go_sdk && config_go_env && create_go_path && \
   check_command_status "run_install_golang"
   print_color "green" "golang-${go_sdk_version} installation completed!" 
   print_color "red" "exec \"source /etc/profile\" after installation completed !!!"
