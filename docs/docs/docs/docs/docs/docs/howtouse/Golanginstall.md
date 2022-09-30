@@ -1,6 +1,6 @@
 # Golang安装
 
-<!--sec data-title="Intall Go" data-id="section0" data-show=true ces-->
+<!--sec data-title="Install Go" data-id="section0" data-show=true ces-->
 
 ```bash
 #!/usr/bin/env bash

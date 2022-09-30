@@ -11,7 +11,7 @@
  # @Author       : neet11 neetwy@163.com
  # @Date         : 2022-09-27 03:01:36
  # @LastEditors  : neet11 neetwy@163.com
- # @LastEditTime : 2022-09-30 12:13:44
+ # @LastEditTime : 2022-09-30 13:05:49
  # @FilePath     : /shell/config-dev-env/install_golang.sh
 ### 
 
@@ -74,11 +74,11 @@ function wget_sdk_url() {
 # unarchive sdk to dir
 function install_go_sdk() {
   print_color "green" "install_go_sdk"
-  tar -zxf "${HOME}"/tools/go"${go_sdk_version}".linux-amd64.tar.gz -C /usr/local/
-  check_command_status "install_go_sdk"
+  sudo tar -zxf "${HOME}"/tools/go"${go_sdk_version}".linux-amd64.tar.gz -C /usr/local/
+  check_command_status "unarchive_go_sdk"
   print_color "blue" "unarchive golang sdk in /usr/local/"
-  mv /usr/local/go /usr/local/go"${go_sdk_version}"
-  ln -s /usr/local/go"${go_sdk_version}" /usr/local/go
+  sudo mv /usr/local/go /usr/local/go"${go_sdk_version}"
+  sudo ln -s /usr/local/go"${go_sdk_version}" /usr/local/go
   check_command_status "install_go_sdk"
 }
 
@@ -105,8 +105,9 @@ function create_go_path() {
 function run_install_golang() {
   print_color "green" "run_install_golang"
   wget_sdk_url && install_go_sdk && config_go_env && create_go_path && \
-  print_color "green" "golang-${go_sdk_version} installation completed!" \
   check_command_status "run_install_golang"
+  print_color "green" "golang-${go_sdk_version} installation completed!" 
+  print_color "red" "exec \"source /etc/profile\" after installation completed !!!"
   exit 0
 }
 
