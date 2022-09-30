@@ -11,7 +11,7 @@
  # @Author       : neet11 neetwy@163.com
  # @Date         : 2022-09-27 03:01:36
  # @LastEditors  : neet11 neetwy@163.com
- # @LastEditTime : 2022-09-30 08:02:06
+ # @LastEditTime : 2022-09-30 12:13:44
  # @FilePath     : /shell/config-dev-env/install_golang.sh
 ### 
 
@@ -20,16 +20,15 @@
 go_sdk_version=1.19.1
 
 # config files
-cat >> /etc/profile << EOF
-
+echo "
 #GOROOT PATH
 export GOROOT=/usr/local/go
 #GOBIN PATH
 export GOBIN=\$GOROOT/bin
 #GOHOME PATH
-export GOPATH=$HOME/go
+export GOPATH=\$HOME/go
 export PATH=\$PATH:\$GOPATH:\$GOBIN:\$GOROOT 
-EOF
+" | sudo tee -a /etc/profile > /dev/null
 
 # shellcheck source=/dev/null
 source /etc/profile
@@ -90,7 +89,7 @@ function config_go_env() {
   go env -w GOPROXY=https://goproxy.cn,direct && \
   go env -w GOROOT=/usr/local/go && \
   go env -w GOBIN=/usr/local/go/bin && \
-  go env -w GOPATH="${HOME}"/go 
+  go env -w GOPATH="${HOME}"/go
   check_command_status "config_go_env"
 }
 
