@@ -71,8 +71,8 @@ function config_profile() {
 function wget_sdk_url() {
   print_color "green" "wget_sdk_url"
   mkdir -p "$HOME"/tools
-  print_color "blue" "download golang sdk in /opt/tools/"
-  wget -P "${HOME}"/tools https://go.dev/dl/go"${go_sdk_version}".linux-amd64.tar.gz
+  print_color "blue" "download golang sdk in ${HOME}/tools/"
+  wget -P "${HOME}"/tools https://studygolang.com/dl/golang/go"${go_sdk_version}".linux-amd64.tar.gz
   check_command_status "wget_sdk_url"
 }
 

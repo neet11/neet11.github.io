@@ -53,7 +53,7 @@ function config_profile() {
   print_color "green" "config_profile"
   print_color "blue" "append go env to /etc/profile"
 
-  append_profile="sudo tee -a /etc/profile > /dev/null"
+  append_profile="sudo tee -a /etc/profile"
 
   echo -e "\n#GOROOT PATH\nexport GOROOT=/usr/local/go" | $append_profile
   echo -e "#GOBIN PATH\nexport GOBIN=\$GOROOT/bin" | $append_profile

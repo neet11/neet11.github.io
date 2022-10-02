@@ -3,8 +3,8 @@
 cd $(pwd)
 gitbook build
 
-if [[ -d docs ]];then
-  rm -f docs
+if [[ -d "./docs" ]];then
+  rm -rf ./docs
 fi
 
 cp -rf _book docs
@@ -14,6 +14,6 @@ git add --all
 git commit -m "update pages"
 git push origin master --force
 
-echo "========================"
-echo "git push github page"
-echo "========================"
+echo "============================"
+echo "git push github page success"
+echo "============================"
