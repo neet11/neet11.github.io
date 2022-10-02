@@ -1,5 +1,7 @@
 # Golang安装
 
+%accordion%install_golang.sh%accordion%
+
 ```bash
 #!/usr/bin/env bash
 
@@ -133,3 +135,5 @@ function main() {
 # run script
 main "$@"
 ```
+
+%/accordion%
