@@ -93,10 +93,10 @@ function install_go_sdk() {
     sudo mv /usr/local/go /usr/local/go"${go_sdk_version}"
     sudo ln -s /usr/local/go"${go_sdk_version}" /usr/local/go
     print_color "blue" "unarchive golang sdk in /usr/local/"
-    check_command_status "install_go_sdk"
   else
     print_color "blue" "/usr/local/go directory already exists"
   fi
+  check_command_status "install_go_sdk"
 }
 
 # config go path env
@@ -124,7 +124,7 @@ function run_install_golang() {
   config_profile && download_sdk_pkg && install_go_sdk && config_go_env && create_go_path && \
   check_command_status "run_install_golang"
   print_color "green" "golang-${go_sdk_version} installation completed!" 
-  print_color "red" "exec \"source /etc/profile\" after installation completed !!!"
+  print_color "yellow" "exec \"source /etc/profile\" after installation completed !!!"
   exit 0
 }
 
@@ -160,7 +160,7 @@ function main() {
           clear_go_env
         ;;
         *)
-        echo "unknown parameter" && help
+          print_color "red" "unknown parameter" && help
         ;;
     esac
   else

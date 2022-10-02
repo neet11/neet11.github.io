@@ -62,12 +62,12 @@ function config_profile() {
     echo -e "#GOBIN PATH\nexport GOBIN=\$GOROOT/bin" | $append_profile
     echo -e "#GOHOME PATH\nexport GOPATH=\$HOME/go" | $append_profile
     echo -e "\nexport PATH=\$PATH:\$GOPATH:\$GOBIN:\$GOROOT" | $append_profile
-    check_command_status "config_profile"
     # shellcheck source=/dev/null
     source /etc/profile
   else
     print_color "blue" "/etc/profile has been added!"
   fi
+  check_command_status "config_profile"
 
 }
  

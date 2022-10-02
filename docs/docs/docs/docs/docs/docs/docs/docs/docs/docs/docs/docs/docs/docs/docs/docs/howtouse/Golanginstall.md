@@ -90,7 +90,7 @@ function config_go_env() {
   go env -w GOPROXY=https://goproxy.cn,direct && \
   go env -w GOROOT=/usr/local/go && \
   go env -w GOBIN=/usr/local/go/bin && \
-  go env -w GOPATH="${HOME}"/go && \
+  go env -w GOPATH="${HOME}"/go 
   check_command_status "config_go_env"
 }
 

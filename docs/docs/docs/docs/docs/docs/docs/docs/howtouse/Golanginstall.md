@@ -11,7 +11,7 @@
  # @Author       : neet11 neetwy@163.com
  # @Date         : 2022-09-27 03:01:36
  # @LastEditors  : neet11 neetwy@163.com
- # @LastEditTime : 2022-09-30 14:18:09
+ # @LastEditTime : 2022-10-01 03:52:21
  # @FilePath     : /shell/config-dev-env/install_golang.sh
 ### 
 
@@ -53,13 +53,12 @@ function config_profile() {
   print_color "green" "config_profile"
   print_color "blue" "append go env to /etc/profile"
 
-  echo -e "\n#GOROOT PATH" | sudo tee -a /etc/profile > /dev/null
-  echo -e "export GOROOT=/usr/local/go" | sudo tee -a /etc/profile > /dev/null
-  echo -e "#GOBIN PATH" | sudo tee -a /etc/profile > /dev/null
-  echo -e "export GOBIN=\$GOROOT/bin" | sudo tee -a /etc/profile > /dev/null
-  echo -e "#GOHOME PATH" | sudo tee -a /etc/profile > /dev/null
-  echo -e "export GOPATH=\$HOME/go" | sudo tee -a /etc/profile > /dev/null
-  echo -e "export PATH=\$PATH:\$GOPATH:\$GOBIN:\$GOROOT" | sudo tee -a /etc/profile > /dev/null
+  append_profile="sudo tee -a /etc/profile > /dev/null"
+
+  echo -e "\n#GOROOT PATH\nexport GOROOT=/usr/local/go" | $append_profile
+  echo -e "#GOBIN PATH\nexport GOBIN=\$GOROOT/bin" | $append_profile
+  echo -e "#GOHOME PATH\nexport GOPATH=\$HOME/go" | $append_profile
+  echo -e "\nexport PATH=\$PATH:\$GOPATH:\$GOBIN:\$GOROOT" | $append_profile
   
   check_command_status "config_profile"
 
@@ -72,7 +71,7 @@ function wget_sdk_url() {
   print_color "green" "wget_sdk_url"
   mkdir -p "$HOME"/tools
   print_color "blue" "download golang sdk in ${HOME}/tools/"
-  wget -P "${HOME}"/tools https://studygolang.com/dl/golang/go"${go_sdk_version}".linux-amd64.tar.gz
+  wget -P "${HOME}"/tools https://gomirrors.org/dl/go/go"${go_sdk_version}".linux-amd64.tar.gz
   check_command_status "wget_sdk_url"
 }
 

@@ -91,11 +91,12 @@ function install_go_sdk() {
     sudo tar -zxf "${HOME}"/tools/"${go_sdk_package}" -C /usr/local/
     check_command_status "unarchive_go_sdk"
     sudo mv /usr/local/go /usr/local/go"${go_sdk_version}"
-    sudo ln -s /usr/local/go"${go_sdk_version}" /usr/local/go
     print_color "blue" "unarchive golang sdk in /usr/local/"
   else
     print_color "blue" "/usr/local/go directory already exists"
   fi
+  sudo rm -rf /usr/local/go
+  sudo ln -s /usr/local/go"${go_sdk_version}" /usr/local/go
   check_command_status "install_go_sdk"
 }
 
