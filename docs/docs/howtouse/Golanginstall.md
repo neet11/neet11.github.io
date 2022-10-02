@@ -94,8 +94,8 @@ function install_go_sdk() {
     print_color "blue" "unarchive golang sdk in /usr/local/"
   else
     print_color "blue" "/usr/local/go directory already exists"
+    sudo rm -rf /usr/local/go
   fi
-  sudo rm -rf /usr/local/go
   sudo ln -s /usr/local/go"${go_sdk_version}" /usr/local/go
   check_command_status "install_go_sdk"
 }

@@ -86,7 +86,7 @@ function download_sdk_pkg() {
 # unarchive sdk to dir
 function install_go_sdk() {
   print_color "green" "install_go_sdk"
-  if [ ! -d /usr/local/go"${go_sdk_package}" ]
+  if [ ! -d /usr/local/go"${go_sdk_version}" ]
   then
     sudo tar -zxf "${HOME}"/tools/"${go_sdk_package}" -C /usr/local/
     check_command_status "unarchive_go_sdk"
