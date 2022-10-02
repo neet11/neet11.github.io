@@ -11,7 +11,7 @@
  # @Author       : neet11 neetwy@163.com
  # @Date         : 2022-09-27 03:01:36
  # @LastEditors  : neet11 neetwy@163.com
- # @LastEditTime : 2022-09-30 13:30:17
+ # @LastEditTime : 2022-09-30 14:18:09
  # @FilePath     : /shell/config-dev-env/install_golang.sh
 ### 
 
@@ -52,15 +52,15 @@ function help() {
 function config_profile() {
   print_color "green" "config_profile"
   print_color "blue" "append go env to /etc/profile"
-  echo "
-  #GOROOT PATH
-  export GOROOT=/usr/local/go
-  #GOBIN PATH
-  export GOBIN=\$GOROOT/bin
-  #GOHOME PATH
-  export GOPATH=\$HOME/go
-  export PATH=\$PATH:\$GOPATH:\$GOBIN:\$GOROOT 
-  " | sudo tee -a /etc/profile > /dev/null
+
+  echo -e "\n#GOROOT PATH" | sudo tee -a /etc/profile > /dev/null
+  echo -e "export GOROOT=/usr/local/go" | sudo tee -a /etc/profile > /dev/null
+  echo -e "#GOBIN PATH" | sudo tee -a /etc/profile > /dev/null
+  echo -e "export GOBIN=\$GOROOT/bin" | sudo tee -a /etc/profile > /dev/null
+  echo -e "#GOHOME PATH" | sudo tee -a /etc/profile > /dev/null
+  echo -e "export GOPATH=\$HOME/go" | sudo tee -a /etc/profile > /dev/null
+  echo -e "export PATH=\$PATH:\$GOPATH:\$GOBIN:\$GOROOT" | sudo tee -a /etc/profile > /dev/null
+  
   check_command_status "config_profile"
 
   # shellcheck source=/dev/null
