@@ -17,8 +17,8 @@
 
 
 # global environment variable
-go_sdk_version=1.19.1
-go_sdk_package=go"${go_sdk_version}".linux-amd64.tar.gz
+go_sdk_version="1.19.1"
+go_sdk_package="go${go_sdk_version}.linux-amd64.tar.gz"
 
 # define:info(32green) warn(31red) process(33yellow)
 function print_color () {

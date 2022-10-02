@@ -1,6 +1,6 @@
 # Golang安装
 
-%accordion%install_golang.sh%accordion%
+<!--sec data-title="Intall Go" data-id="section0" data-show=true ces-->
 
 ```bash
 #!/usr/bin/env bash
@@ -136,4 +136,4 @@ function main() {
 main "$@"
 ```
 
-%/accordion%
+<!--endsec-->

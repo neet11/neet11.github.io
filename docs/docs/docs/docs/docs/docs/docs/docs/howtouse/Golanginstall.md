@@ -11,13 +11,14 @@
  # @Author       : neet11 neetwy@163.com
  # @Date         : 2022-09-27 03:01:36
  # @LastEditors  : neet11 neetwy@163.com
- # @LastEditTime : 2022-10-01 03:52:21
+ # @LastEditTime : 2022-10-02 01:09:19
  # @FilePath     : /shell/config-dev-env/install_golang.sh
 ### 
 
 
 # global environment variable
 go_sdk_version=1.19.1
+go_sdk_package=go"${go_sdk_version}".linux-amd64.tar.gz
 
 # define:info(32green) warn(31red) process(33yellow)
 function print_color () {
@@ -45,6 +46,7 @@ function help() {
   echo "Usage:"
   echo "    -h          : display this help and exit"
   echo "    -v          : input golang version default 1.19.1"
+  echo "    -r          : remove golang env and exit"
   exit 1
 }
 
@@ -53,37 +55,48 @@ function config_profile() {
   print_color "green" "config_profile"
   print_color "blue" "append go env to /etc/profile"
 
-  append_profile="sudo tee -a /etc/profile"
+  if [ "$(grep -c "GOROOT" /etc/profile)" -eq '0' ] 
+  then 
+    append_profile="sudo tee -a /etc/profile"
+    echo -e "\n#GOROOT PATH\nexport GOROOT=/usr/local/go" | $append_profile
+    echo -e "#GOBIN PATH\nexport GOBIN=\$GOROOT/bin" | $append_profile
+    echo -e "#GOHOME PATH\nexport GOPATH=\$HOME/go" | $append_profile
+    echo -e "\nexport PATH=\$PATH:\$GOPATH:\$GOBIN:\$GOROOT" | $append_profile
+    check_command_status "config_profile"
+    # shellcheck source=/dev/null
+    source /etc/profile
+  else
+    print_color "blue" "/etc/profile has been added!"
+  fi
 
-  echo -e "\n#GOROOT PATH\nexport GOROOT=/usr/local/go" | $append_profile
-  echo -e "#GOBIN PATH\nexport GOBIN=\$GOROOT/bin" | $append_profile
-  echo -e "#GOHOME PATH\nexport GOPATH=\$HOME/go" | $append_profile
-  echo -e "\nexport PATH=\$PATH:\$GOPATH:\$GOBIN:\$GOROOT" | $append_profile
-  
-  check_command_status "config_profile"
-
-  # shellcheck source=/dev/null
-  source /etc/profile
 }
  
 # get golang sdk url
-function wget_sdk_url() {
-  print_color "green" "wget_sdk_url"
-  mkdir -p "$HOME"/tools
+function download_sdk_pkg() {
+  print_color "green" "download_sdk_pkg"
+  mkdir -p "${HOME}"/tools
   print_color "blue" "download golang sdk in ${HOME}/tools/"
-  wget -P "${HOME}"/tools https://gomirrors.org/dl/go/go"${go_sdk_version}".linux-amd64.tar.gz
-  check_command_status "wget_sdk_url"
+  if [ ! -f "${HOME}"/tools/"${go_sdk_package}" ]
+  then 
+    wget -P "${HOME}"/tools https://gomirrors.org/dl/go/"${go_sdk_package}"
+  fi
+  check_command_status "download_sdk_pkg"
 }
 
 # unarchive sdk to dir
 function install_go_sdk() {
   print_color "green" "install_go_sdk"
-  sudo tar -zxf "${HOME}"/tools/go"${go_sdk_version}".linux-amd64.tar.gz -C /usr/local/
-  check_command_status "unarchive_go_sdk"
-  print_color "blue" "unarchive golang sdk in /usr/local/"
-  sudo mv /usr/local/go /usr/local/go"${go_sdk_version}"
-  sudo ln -s /usr/local/go"${go_sdk_version}" /usr/local/go
-  check_command_status "install_go_sdk"
+  if [ ! -d /usr/local/go ]
+  then
+    sudo tar -zxf "${HOME}"/tools/"${go_sdk_package}" -C /usr/local/
+    check_command_status "unarchive_go_sdk"
+    sudo mv /usr/local/go /usr/local/go"${go_sdk_version}"
+    sudo ln -s /usr/local/go"${go_sdk_version}" /usr/local/go
+    print_color "blue" "unarchive golang sdk in /usr/local/"
+    check_command_status "install_go_sdk"
+  else
+    print_color "blue" "/usr/local/go directory already exists"
+  fi
 }
 
 # config go path env
@@ -108,10 +121,26 @@ function create_go_path() {
 # entry function 
 function run_install_golang() {
   print_color "green" "run_install_golang"
-  config_profile && wget_sdk_url && install_go_sdk && config_go_env && create_go_path && \
+  config_profile && download_sdk_pkg && install_go_sdk && config_go_env && create_go_path && \
   check_command_status "run_install_golang"
   print_color "green" "golang-${go_sdk_version} installation completed!" 
   print_color "red" "exec \"source /etc/profile\" after installation completed !!!"
+  exit 0
+}
+
+# clean go env
+function clear_go_env() {
+  print_color "green" "clear_go_env"
+  sudo rm -rf "${HOME}"/go && \
+  sudo rm -rf "${HOME}"/tools/go* && \
+  sudo rm -rf /usr/local/go* && \
+  sudo sed -i '/GOROOT/d'  /etc/profile > /dev/null && \
+  sudo sed -i '/GOPATH/d'  /etc/profile > /dev/null && \
+  sudo sed -i '/GOHOME/d'  /etc/profile > /dev/null && \
+  sudo sed -i '/GOBIN/d'  /etc/profile > /dev/null && \
+  sudo sed -i ':n;/^\n*$/{$! N;$d;bn}'  /etc/profile
+  check_command_status "clear_go_env"
+  print_color "green" "golang env clear completed!" 
   exit 0
 }
 
@@ -126,6 +155,9 @@ function main() {
         -v|version)
           go_sdk_version=$2
           run_install_golang
+        ;;
+        -r|remove)
+          clear_go_env
         ;;
         *)
         echo "unknown parameter" && help

@@ -11,7 +11,7 @@
  # @Author       : neet11 neetwy@163.com
  # @Date         : 2022-09-27 03:01:36
  # @LastEditors  : neet11 neetwy@163.com
- # @LastEditTime : 2022-10-02 01:09:19
+ # @LastEditTime : 2022-10-02 13:25:29
  # @FilePath     : /shell/config-dev-env/install_golang.sh
 ### 
 
@@ -86,7 +86,7 @@ function download_sdk_pkg() {
 # unarchive sdk to dir
 function install_go_sdk() {
   print_color "green" "install_go_sdk"
-  if [ ! -d /usr/local/go ]
+  if [ ! -d /usr/local/go"${go_sdk_package}" ]
   then
     sudo tar -zxf "${HOME}"/tools/"${go_sdk_package}" -C /usr/local/
     check_command_status "unarchive_go_sdk"
@@ -154,6 +154,7 @@ function main() {
         ;;
         -v|version)
           go_sdk_version=$2
+          go_sdk_package=go"${go_sdk_version}".linux-amd64.tar.gz
           run_install_golang
         ;;
         -r|remove)
