@@ -1,7 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
-* [基本安装](configenv/README.md)
+* [配置环境](configenv/README.md)
   * [Docker安装](configenv/docker.md)
   * [Gitbook安装](configenv/gitbook.md)
   * [Golang安装](configenv/golang.md)
