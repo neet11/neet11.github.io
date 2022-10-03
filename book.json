@@ -1,6 +1,6 @@
 {
-    "title": "GitBook 使用教程",
-    "description": "记录 GitBook 的配置和一些插件的使用",
+    "title": "知识积累",
+    "description": "记录积累",
     "author": "neet11",
     "output.name": "site",
     "language": "zh-hans",
@@ -78,7 +78,7 @@
             "size": "small"
        },
         "tbfed-pagefooter": {
-            "copyright": "Copyright © cola711.cn 2021",
+            "copyright": "Copyright © neet11 2022",
             "modify_label": "Latest modification time:",
             "modify_format": "YYYY-MM-DD HH:mm:ss"
         },
