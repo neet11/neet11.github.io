@@ -8,6 +8,9 @@ gitbook build
 #   rm -rf ./docs
 # fi
 
+# cp -rf _book docs
+mv -f _book  docs
+
 git add --all
 git commit -m "update pages"
 git push origin master --force
