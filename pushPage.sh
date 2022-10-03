@@ -9,7 +9,7 @@ gitbook build
 # fi
 
 # cp -rf _book docs
-mv -f _book  docs
+rsync -a _book docs
 
 git add --all
 git commit -m "update pages"
