@@ -15,7 +15,7 @@ curl -SL https://my5353.com/3nEwh | bash /dev/stdin -h
 ## 安装指定版本
 
 ```bash
-curl -SL https://my5353.com/3nEwh | bash /dev/stdin -v 1.18.6
+curl -SL https://my5353.com/3nEwh | bash /dev/stdin -v "1.18.6"
 ```
 
 ## 清除已安装环境
