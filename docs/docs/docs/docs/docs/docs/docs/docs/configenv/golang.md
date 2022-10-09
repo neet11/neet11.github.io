@@ -26,6 +26,8 @@ curl -SL https://my5353.com/3nEwh | bash /dev/stdin -r
 
 ## 完整脚本
 
+<!--sec data-title="Install Go" data-id="section0" data-show=true ces-->
+
 ```bash
 #!/usr/bin/env bash
 
@@ -134,7 +136,7 @@ function config_profile() {
     print_color "blue" "/etc/profile has been added!"
   fi
 }
- 
+
 # get golang sdk url
 function download_sdk_pkg() {
   mkdir -p "${HOME}"/tools
@@ -230,3 +232,4 @@ function main() {
 # run script
 main "${@}"
 ```
+<!--endsec-->
