@@ -3,25 +3,25 @@
 ## 默认安装
 
 ```bash
-curl -SL https://my5353.com/confgo | bash
+curl -sSL https://my5353.com/confgo | bash
 ```
 
 ## 使用帮助
 
 ```bash
-curl -SL https://my5353.com/confgo | bash /dev/stdin -h
+curl -sSL https://my5353.com/confgo | bash /dev/stdin -h
 ```
 
 ## 安装指定版本
 
 ```bash
-curl -SL https://my5353.com/confgo | bash /dev/stdin -v "1.18.6"
+curl -sSL https://my5353.com/confgo | bash /dev/stdin -v "1.18.6"
 ```
 
 ## 清除已安装环境
 
 ```bash
-curl -SL https://my5353.com/confgo | bash /dev/stdin -r
+curl -sSL https://my5353.com/confgo | bash /dev/stdin -r
 ```
 
 ## 完整脚本

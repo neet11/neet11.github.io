@@ -3,13 +3,13 @@
 ## 默认安装
 
 ```bash
-curl -SL https://my5353.com/nerdfont | bash
+curl -sSL https://my5353.com/nerdfont | bash
 ```
 
 ## 使用帮助
 
 ```bash
-curl -SL https://my5353.com/nerdfont | bash /dev/stdin -h
+curl -sSL https://my5353.com/nerdfont | bash /dev/stdin -h
 ```
 
 ## 安装指定字体
@@ -17,13 +17,13 @@ curl -SL https://my5353.com/nerdfont | bash /dev/stdin -h
 > (仅限FiraCode DroidSansMono DejaVuSansMono CodeNewRoman)
 
 ```bash
-curl -SL https://my5353.com/nerdfont | bash /dev/stdin -o FiraCode DejaVuSansMono
+curl -sSL https://my5353.com/nerdfont | bash /dev/stdin -o FiraCode DejaVuSansMono
 ```
 
 ## 清除已安装环境
 
 ```bash
-curl -SL https://my5353.com/nerdfont | bash /dev/stdin -r
+curl -sSL https://my5353.com/nerdfont | bash /dev/stdin -r
 ```
 
 ## 完整脚本
