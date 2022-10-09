@@ -107,7 +107,7 @@ function print_color () {
 # check the command execution status
 function status_closure () {
   print_color "green" "${1}"
-  eval "${1}"
+  eval "${*}"
   print_color "green" "${1} executed successfully"
 }
 
