@@ -6,13 +6,13 @@
  # @Author       : neet11 neetwy@163.com
  # @Date         : 2022-09-26 13:08:04
  # @LastEditors  : neet11 neetwy@163.com
- # @LastEditTime : 2022-10-09 17:35:00
+ # @LastEditTime : 2022-10-09 17:36:33
  # @FilePath     : \neet11.github.io\pushPage.sh
 ### 
 
 
 
-if [[ -d "docs" ]];then
+if [ -d "docs" ];then
   rm -rf docs
 fi
 
