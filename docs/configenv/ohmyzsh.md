@@ -3,31 +3,31 @@
 ## 默认安装
 
 ```bash
-curl -SL https://my5353.com/ohmyzsh | bash
+curl -sSL https://my5353.com/ohmyzsh | bash
 ```
 
 ## 使用帮助
 
 ```bash
-curl -SL https://my5353.com/ohmyzsh | bash /dev/stdin -h
+curl -sSL https://my5353.com/ohmyzsh | bash /dev/stdin -h
 ```
 
 ## 配置安装环境
 
 ```bash
-curl -SL https://my5353.com/ohmyzsh | bash /dev/stdin -c
+curl -sSL https://my5353.com/ohmyzsh | bash /dev/stdin -c
 ```
 
 ## 查看版本信息
 
 ```bash
-curl -SL https://my5353.com/ohmyzsh | bash /dev/stdin -v
+curl -sSL https://my5353.com/ohmyzsh | bash /dev/stdin -v
 ```
 
 ## 清除已安装环境
 
 ```bash
-curl -SL https://my5353.com/ohmyzsh | bash /dev/stdin -r
+curl -sSL https://my5353.com/ohmyzsh | bash /dev/stdin -r
 ```
 
 ## 完整脚本

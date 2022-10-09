@@ -12,7 +12,9 @@ curl -SL https://my5353.com/nerdfont | bash
 curl -SL https://my5353.com/nerdfont | bash /dev/stdin -h
 ```
 
-## 安装指定字体(仅限FiraCode DroidSansMono DejaVuSansMono CodeNewRoman)
+## 安装指定字体
+
+> (仅限FiraCode DroidSansMono DejaVuSansMono CodeNewRoman)
 
 ```bash
 curl -SL https://my5353.com/nerdfont | bash /dev/stdin -o FiraCode DejaVuSansMono
@@ -32,7 +34,7 @@ curl -SL https://my5353.com/nerdfont | bash /dev/stdin -r
 #!/usr/bin/env bash
 
 ###
- # @Descripttion : Do Something
+ # @Descripttion : Install Nerd Font In Linux
  # @version      : v1.0.0
  # @Author       : neet11 neetwy@163.com
  # @Date         : 2022-09-27 03:01:36
