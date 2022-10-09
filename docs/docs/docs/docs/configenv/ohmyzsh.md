@@ -21,7 +21,7 @@ curl -SL https://my5353.com/ohmyzsh | bash /dev/stdin -c
 ## 查看版本信息
 
 ```bash
-curl -SL https://my5353.com/ohmyzsh | bash /dev/stdin -v "1.18.6"
+curl -SL https://my5353.com/ohmyzsh | bash /dev/stdin -v
 ```
 
 ## 清除已安装环境
