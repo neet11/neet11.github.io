@@ -32,7 +32,7 @@ curl -SL https://my5353.com/ohmyzsh | bash /dev/stdin -r
 
 ## 完整脚本
 
-<!--sec data-title="Install Go" data-id="section0" data-show=true ces-->
+<!--sec data-title="Install OhMyZsh" data-id="section0" data-show=true ces-->
 
 ```bash
 #!/usr/bin/env bash

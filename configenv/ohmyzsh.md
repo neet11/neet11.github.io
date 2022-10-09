@@ -47,7 +47,6 @@ curl -SL https://my5353.com/ohmyzsh | bash /dev/stdin -r
  # @FilePath     : /shell/config-dev-env/install_ohmyzsh.sh
 ### 
 
-
 # set -o xtrace           # Print commands and their arguments
 
 # set -o errexit          # Exit on most errors (see the manual)
