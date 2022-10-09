@@ -119,7 +119,7 @@ function status_closure () {
 
 # show help info
 function help() {
-  echo "Usage:"
+  echo "Usage: ./install_ohmyzsh.sh [-h -v -c -r]"
   echo "    -h          : display this help and exit"
   echo "    -v          : print zsh version and exit"
   echo "    -c          : config zsh env and exit"

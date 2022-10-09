@@ -113,7 +113,7 @@ function status_closure () {
 
 # show help info
 function help() {
-  echo "Usage:"
+  echo "Usage: ./install_golang.sh [-h -r] [-v version]"
   echo "    -h          : display this help and exit"
   echo "    -v          : input golang version default 1.19.1"
   echo "    -r          : remove golang env and exit"

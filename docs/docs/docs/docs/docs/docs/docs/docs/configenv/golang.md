@@ -51,7 +51,7 @@ set -o pipefail         # Use last non-zero exit code in a pipeline
 
 # global constant
 TAG="CMD"
-LOG_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/logs"
+LOG_PATH=$( cd "$(dirname "${BASH_SOURCE[0]}")" && pwd )/logs
 LOG_FILE="${LOG_PATH}/install_golang_$(date +"%Y%m%d").log"
 HIDE_LOG=true
 
