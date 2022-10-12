@@ -1,5 +1,25 @@
-# Introduction
+# 简介
 
-这个文件相当于一本[Gitbook](https://neet11.github.io)的简介
+[Gitbook](https://neet11.github.io)
 
-欢乐的时光总是过得那么快
+<!--sec data-title="环境配置" data-id="section0" data-show=true ces-->
+## 环境配置
+
+### 安装golang
+
+```bash
+curl -sSL https://my5353.com/confgo | bash
+```
+
+### 安装ohmyzsh
+
+```bash
+curl -sSL https://my5353.com/ohmyzsh | bash
+```
+
+### 安装nerdfont
+
+```bash
+curl -sSL https://my5353.com/nerdfont | bash
+```
+<!--endsec-->
