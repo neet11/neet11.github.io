@@ -37,7 +37,6 @@
         "sectionx@^3.1.0",
         "anchor-navigation-ex@0.1.8",
         "favicon@^0.0.2",
-        "3-ba@^0.9.0",
         "terminal@^0.3.2",
         "alerts@^0.2.0",
         "include-csv@^0.1.0",
@@ -50,7 +49,6 @@
         "chart@^0.2.0",
         "code",
         "accordion",
-        "pageview-count",
         "sectionx",
         "expandable-chapters-small"
     ],
@@ -81,9 +79,6 @@
             "copyright": "Copyright © neet11 2022",
             "modify_label": "Latest modification time:",
             "modify_format": "YYYY-MM-DD HH:mm:ss"
-        },
-        "3-ba": {
-            "token": "ff100361cdce95dd4c8fb96b4009f7bc"
         },
         "simple-page-toc": {
             "maxDepth": 3,
