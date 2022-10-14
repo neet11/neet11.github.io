@@ -37,7 +37,7 @@ curl -sSL https://my5353.com/confgo | bash /dev/stdin -r
  # @Author       : neet11 neetwy@163.com
  # @Date         : 2022-09-27 03:01:36
  # @LastEditors  : neet11 neetwy@163.com
- # @LastEditTime : 2022-10-06 13:52:43
+ # @LastEditTime : 2022-10-09 09:18:56
  # @FilePath     : /shell/config-dev-env/install_golang.sh
 ### 
 
@@ -51,7 +51,7 @@ set -o pipefail         # Use last non-zero exit code in a pipeline
 
 # global constant
 TAG="CMD"
-#LOG_PATH=$( cd "$(dirname "${BASH_SOURCE[0]}")" && pwd )/logs
+# LOG_PATH=$( cd "$(dirname "${BASH_SOURCE[0]}")" && pwd )/logs
 LOG_PATH="/tmp/shell/logs"
 LOG_FILE="${LOG_PATH}/install_golang_$(date +"%Y%m%d").log"
 HIDE_LOG=true
@@ -117,7 +117,7 @@ function help() {
   echo "    -h          : display this help and exit"
   echo "    -v          : input golang version default 1.19.1"
   echo "    -r          : remove golang env and exit"
-  exit 1
+  exit 0
 }
 
 # config files
@@ -137,7 +137,7 @@ function config_profile() {
     print_color "blue" "/etc/profile has been added!"
   fi
 }
-
+ 
 # get golang sdk url
 function download_sdk_pkg() {
   mkdir -p "${HOME}"/tools
@@ -168,8 +168,8 @@ function config_go_env() {
   go env -w GO111MODULE=on && \
   go env -w GOPROXY=https://goproxy.cn,direct && \
   go env -w GOROOT=/usr/local/go && \
-  go env -w GOBIN=/usr/local/go/bin && \
-  go env -w GOPATH="${HOME}"/go
+  go env -w GOBIN="${HOME}/go/bin" && \
+  go env -w GOPATH="${HOME}/go"
 }
 
 # create go paht dir
