@@ -43,7 +43,7 @@ curl -sSL https://my5353.com/ohmyzsh | bash /dev/stdin -r
  # @Author       : neet11 neetwy@163.com
  # @Date         : 2022-09-27 03:01:36
  # @LastEditors  : neet11 neetwy@163.com
- # @LastEditTime : 2022-10-08 10:56:58
+ # @LastEditTime : 2022-10-10 03:46:42
  # @FilePath     : /shell/config-dev-env/install_ohmyzsh.sh
 ### 
 
@@ -203,15 +203,13 @@ function config_oh_my_zsh() {
       print_color "green" "zsh zsh-syntax-highlighting  plugin installed"
     fi
 
-    if [ ! -f "${HOME}/.zshrc.old" ]
-    then
-      print_color "green" "config .zshrc"
-      mv "${HOME}/.zshrc" "${HOME}/.zshrc.old"
-      wget https://gitea.com/neet11/config-dev-env/raw/branch/main/.zshrc -P "${HOME}/" && chmod 644 "${HOME}/.zshrc"
-      print_color "yellow" "reload .zshrc use source ${HOME}/.zshrc"
-    else
-      print_color "green" "zsh configfile .zshrc has been updated"
-    fi
+    print_color "green" "config .zshrc"
+    if [  -f "${HOME}/.zshrc" ]; then rm -rf "${HOME}/.zshrc"; fi
+    wget https://gitea.com/neet11/config-dev-env/raw/branch/main/.zshrc -P "${HOME}/" && chmod 644 "${HOME}/.zshrc"
+    if [  -f "${HOME}/.spacevimrc.zsh" ]; then rm -rf "${HOME}/.spacevimrc.zsh"; fi
+    wget https://gitea.com/neet11/config-dev-env/raw/branch/main/.spaceshiprc.zsh -P "${HOME}/" && chmod 644 "${HOME}/.spaceshiprc.zsh"
+    print_color "green" "zsh configfile .zshrc has been updated"
+    print_color "yellow" "reload .zshrc use source ${HOME}/.zshrc"
 }
 
 # clear zsh env
@@ -243,7 +241,6 @@ function clear_zsh_env() {
       print_color "yellow" "clear zsh succeeded. please login again"
     fi
 }
-
 
 # entry function
 function run_install_zsh() {
