@@ -130,7 +130,7 @@ function config_profile() {
     echo -e "\n#GOROOT PATH\nexport GOROOT=/usr/local/go" | $append_profile
     echo -e "#GOHOME PATH\nexport GOPATH=\$HOME/go" | $append_profile
     echo -e "#GOBIN PATH\nexport GOBIN=\$GOPATH/bin" | $append_profile
-    echo -e "\nexport PATH=\$PATH:\$GOPATH:\$GOBIN:\$GOROOT" | $append_profile
+    echo -e "\nexport PATH=\$PATH:\$GOPATH:\$GOBIN:\$GOROOT/bin" | $append_profile
     # shellcheck source=/dev/null
     source /etc/profile
   else
