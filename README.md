@@ -22,4 +22,10 @@ curl -sSL https://my5353.com/ohmyzsh | bash
 ```bash
 curl -sSL https://my5353.com/nerdfont | bash
 ```
+
+### 安装spacevim
+
+```bash
+curl -sSL https://my5353.com/spacevim | bash
+```
 <!--endsec-->
