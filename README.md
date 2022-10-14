@@ -8,24 +8,24 @@
 ### 安装golang
 
 ```bash
-curl -sSL https://my5353.com/confgo | bash 
+curl -sSL https://my5353.com/confgo | bash /dev/stdin
 ```
 
 ### 安装ohmyzsh
 
 ```bash
-curl -sSL https://my5353.com/ohmyzsh | bash
+curl -sSL https://my5353.com/ohmyzsh | bash /dev/stdin
 ```
 
 ### 安装nerdfont
 
 ```bash
-curl -sSL https://my5353.com/nerdfont | bash
+curl -sSL https://my5353.com/nerdfont | bash /dev/stdin
 ```
 
 ### 安装spacevim
 
 ```bash
-curl -sSL https://my5353.com/spacevim | bash
+curl -sSL https://my5353.com/spacevim | bash /dev/stdin
 ```
 <!--endsec-->
