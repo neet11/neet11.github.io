@@ -1,4 +1,4 @@
-# Git使用技巧
+# [Git使用技巧](https://learngitbranching.js.org/?locale=zh_CN)
 
 ## 为每个项目单独设置用户名和邮箱
 
@@ -30,4 +30,24 @@ git branch -m master
 
 #强制提交到远程仓库
 git push -f origin master
+```
+
+## git merge和git rebase
+
+```bash
+#所在分支为master，带合并分支为devlop
+git merge devlop
+
+#所在分支为devlop，带变基分支为master
+git rebase master
+```
+
+## Git 同步上游分支代码
+
+```bash
+#设置git同步快捷命令
+alias.sync=!sh -c "git pull && git fetch upstream && git checkout master && git merge upstream/master && git push origin master"
+
+#执行同步命令
+git sync
 ```
