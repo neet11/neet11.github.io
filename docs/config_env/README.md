@@ -1,6 +1,7 @@
 # [Git使用技巧](https://learngitbranching.js.org/?locale=zh_CN)
 
 > [Git命令详解](https://geek-docs.com/git/git-cmds/git-head.html)
+> [Git学习游戏](https://learngitbranching.js.org/?locale=zh_CN)
 
 ## 为每个项目单独设置用户名和邮箱
 
