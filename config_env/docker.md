@@ -100,7 +100,14 @@ http {
 # vi /data/docker/nginx/conf/vhost/test.conf
 server {
     listen 80;
-    server_name 192.168.60.21;
+    server_name up.wy.wow;
+
+    # listen    443 ssl;
+    # server_name www.test.com;
+
+    # ssl_certificate /ssl/server.crt;
+    # ssl_certificate_key /ssl/server.key;
+
     location / {
         root   html;
         index  index.html index.htm;
@@ -112,9 +119,21 @@ server {
 
 ```bash
 docker run --restart=always --name=nginx -it -p 80:80 \
--v /opt/nginx/conf/conf.d:/etc/nginx/conf.d \
--v /opt/nginx/conf/nginx.conf:/etc/nginx/nginx.conf \
--v /opt/nginx/log:/var/log/nginx \
--v /opt/nginx/html:/usr/share/nginx/html \
+-v /data/docker/nginx/conf/vhost:/etc/nginx/conf.d:rw \
+-v /data/docker/nginx/logs:/var/log/nginx:rw \
+-v /data/docker/nginx/conf/ngin.conf:/etc/nginx/nginx.conf:rw \
+-v /data/docker/nginx/html:/etc/nginx/html:rw \
+-d nginx:latest
+```
+
+## 配置ssl证书
+
+```bash
+docker run --restart=always --name=nginx -it -p 80:80 -p 443:443 \
+-v /data/docker/nginx/conf/vhost:/etc/nginx/conf.d:rw \
+-v /data/docker/nginx/logs:/var/log/nginx:rw \
+-v /data/docker/nginx/conf/ngin.conf:/etc/nginx/nginx.conf:rw \
+-v /data/docker/nginx/html:/etc/nginx/html:rw \
+-v /data/docker/nginx/ssl:/ssl:rw \
 -d nginx:latest
 ```
