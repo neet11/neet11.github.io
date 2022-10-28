@@ -1,5 +1,9 @@
 # Docker安装
 
+```bash
+curl -sSL https://get.daocloud.io/docker | sh
+```
+
 ## docker启动mysql
 
 ```bash
