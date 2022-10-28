@@ -40,7 +40,7 @@ mkdir -p /data/docker/nginx/ssl
 ### 配置nginx.conf
 
 ```bash
-# vi /data/docker/nginx/conf/ngin.conf
+# vi /data/docker/nginx/conf/nginx.conf
 user nobody;
 worker_processes 4; 
 worker_cpu_affinity 0001 0010 0100 1000;
