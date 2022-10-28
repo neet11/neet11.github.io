@@ -1,7 +1,20 @@
 # Docker安装
 
+## 一键安装脚本
+
 ```bash
 curl -sSL https://get.daocloud.io/docker | sh
+```
+
+## 普通用户使用docker
+
+```bash
+sudo groupadd docker               # 创建docker组
+sudo usermod -aG docker $USER      # 加入当前用户到docker组
+newgrp docker                      # 刷新docker组
+
+# 普通用户测试使用docker
+docker run hello-world             
 ```
 
 ## docker启动mysql
@@ -91,6 +104,8 @@ server {
     }
 }
 ```
+
+## 运行nginx容器
 
 ```bash
 docker run --restart=always --name=nginx -it -p 80:80 \
