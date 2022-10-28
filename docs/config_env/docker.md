@@ -121,7 +121,7 @@ server {
 docker run --restart=always --name=nginx -it -p 80:80 \
 -v /data/docker/nginx/conf/vhost:/etc/nginx/conf.d:rw \
 -v /data/docker/nginx/logs:/var/log/nginx:rw \
--v /data/docker/nginx/conf/ngin.conf:/etc/nginx/nginx.conf:rw \
+-v /data/docker/nginx/conf/nginx.conf:/etc/nginx/nginx.conf:rw \
 -v /data/docker/nginx/html:/etc/nginx/html:rw \
 -d nginx:latest
 ```
@@ -132,7 +132,7 @@ docker run --restart=always --name=nginx -it -p 80:80 \
 docker run --restart=always --name=nginx -it -p 80:80 -p 443:443 \
 -v /data/docker/nginx/conf/vhost:/etc/nginx/conf.d:rw \
 -v /data/docker/nginx/logs:/var/log/nginx:rw \
--v /data/docker/nginx/conf/ngin.conf:/etc/nginx/nginx.conf:rw \
+-v /data/docker/nginx/conf/nginx.conf:/etc/nginx/nginx.conf:rw \
 -v /data/docker/nginx/html:/etc/nginx/html:rw \
 -v /data/docker/nginx/ssl:/ssl:rw \
 -d nginx:latest
