@@ -2,7 +2,7 @@
 
 * [简介](README.md)
 * [配置环境](config_env/README.md)
-  * [Vagrant安装](config_env/docker.md)
+  * [Vagrant安装](config_env/vagrant.md)
   * [Docker安装](config_env/docker.md)
   * [Gitbook安装](config_env/gitbook.md)
   * [Golang安装](config_env/golang.md)
