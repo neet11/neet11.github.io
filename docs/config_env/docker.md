@@ -5,3 +5,94 @@
 ```bash
 docker run -itd --name mysql_dev -p 3306:3306  -v /home/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 mysql:8.0
 ```
+
+## docker启动nginx
+
+### 创建挂载目录
+
+```bash
+mkdir -p /data/docker/nginx/conf/vhost
+mkdir -p /data/docker/nginx/logs
+mkdir -p /data/docker/nginx/html
+mkdir -p /data/docker/nginx/ssl
+```
+
+### 配置nginx.conf
+
+```bash
+# vi /data/docker/nginx/conf/ngin.conf
+user nobody;
+worker_processes 4; 
+worker_cpu_affinity 0001 0010 0100 1000;
+worker_rlimit_core 768m;
+worker_rlimit_nofile 65536;
+ 
+events {
+    worker_connections 65535;
+    use epoll;
+    epoll_events 1024;
+}
+ 
+http {
+    include mime.types;
+    default_type application/octet-stream;
+ 
+    log_format main '$remote_addr - $remote_user [$time_local] "$request" '
+    '$status $body_bytes_sent "$http_referer" '
+    '"$http_user_agent" "$http_x_forwarded_for" $request_time '
+    '"$host" "$upstream_addr" "$upstream_status" "$upstream_response_time" '
+ 
+    access_log off;
+ 
+    sendfile on;
+    tcp_nopush on;
+    tcp_nodelay on;
+    server_names_hash_bucket_size 128;
+    client_max_body_size 100m;
+    client_body_buffer_size 1024k;
+    client_header_timeout 250;
+    max_ranges 10;
+    send_timeout 450;
+    keepalive_timeout 750;
+    server_name_in_redirect off;
+    server_tokens off;
+ 
+ 
+    gzip on;
+    gzip_buffers 4 16k;
+    gzip_comp_level 9;
+    gzip_http_version 1.0;
+    gzip_min_length 800;
+    gzip_proxied any;
+    gzip_types text/plain application/x-javascript text/css text/javascript application/x-httpd-php image/jpeg image/gif image/png image/jpg;
+    gzip_vary on;
+ 
+    proxy_set_header Connection Keep-Alive;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+ 
+ 
+    include /etc/nginx/conf.d/*.conf;
+}
+```
+
+```bash
+# vi /data/docker/nginx/conf/vhost/test.conf
+server {
+    listen 80;
+    server_name 192.168.60.21;
+    location / {
+        root   html;
+        index  index.html index.htm;
+    }
+}
+```
+
+```bash
+docker run --restart=always --name=nginx -it -p 80:80 \
+-v /opt/nginx/conf/conf.d:/etc/nginx/conf.d \
+-v /opt/nginx/conf/nginx.conf:/etc/nginx/nginx.conf \
+-v /opt/nginx/log:/var/log/nginx \
+-v /opt/nginx/html:/usr/share/nginx/html \
+-d nginx:latest
+```
