@@ -100,7 +100,7 @@ http {
 # vi /data/docker/nginx/conf/vhost/test.conf
 server {
     listen 80;
-    server_name up.wy.wow;
+    server_name 192.168.60.21;
 
     # listen    443 ssl;
     # server_name www.test.com;
