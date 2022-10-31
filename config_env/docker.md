@@ -41,7 +41,7 @@ mkdir -p /data/docker/nginx/ssl
 
 ```bash
 # vi /data/docker/nginx/conf/nginx.conf
-user nobody;
+user nginx;
 worker_processes 4; 
 worker_cpu_affinity 0001 0010 0100 1000;
 worker_rlimit_core 768m;
