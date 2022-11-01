@@ -128,6 +128,8 @@ docker run --restart=always --name=nginx -it -p 80:80 \
 
 ## 配置ssl证书
 
+> [生成本地证书](/config_env/nginx.md)
+
 ```bash
 docker run --restart=always --name=nginx -it -p 80:80 -p 443:443 \
 -v /data/docker/nginx/conf/vhost:/etc/nginx/conf.d:rw \
