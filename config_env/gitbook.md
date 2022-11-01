@@ -4,7 +4,7 @@
 
 > node 版本<=10.xx.xx，否则Gitbook不兼容
 
-```bat
+```powershell
 cd /d c:\opt
 wget -c https://my5353.com/nodejs
 start /wait node-v10.24.1-x64.msi /quiet
@@ -12,14 +12,14 @@ start /wait node-v10.24.1-x64.msi /quiet
 
 ## 安装gitbook
 
-```bat
+```powershell
 cd /d c:\opt
 npm install gitbook-cli -g
 ```
 
 ## 查看gitBook版本
 
-```bat
+```powershell
 c:\opt>where node
 C:\Program Files\nodejs\node.exe
 
@@ -35,7 +35,7 @@ c:\opt>gitbook --version
 
 ## gitbook初始化
 
-```bat
+```powershell
 mkdir d:\website\www.mygitbook.cn\wiki
 cd /d d:\website\www.mygitbook.cn\wiki
 gitbook init
