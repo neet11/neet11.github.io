@@ -38,10 +38,10 @@ git push -f origin master
 ## git merge和git rebase
 
 ```bash
-#所在分支为master，带合并分支为devlop
+#所在分支为master，待合并分支为devlop
 git merge devlop
 
-#所在分支为devlop，带变基分支为master
+#所在分支为devlop，待变基分支为master
 git rebase master
 ```
 
