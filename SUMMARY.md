@@ -21,4 +21,4 @@
 * [常用算法](common_algorithms/README.md)
   * [Python实现](common_algorithms/python.md)
   * [Golang实现](common_algorithms/golang.md)
-* [结束](end/README.md)
+* [其他](other/README.md)
