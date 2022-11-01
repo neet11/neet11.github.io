@@ -1,5 +1,51 @@
 # vagrant安装
 
+## 下载安装包
+
+```bash
+https://developer.hashicorp.com/vagrant/downloads
+```
+
+## 安装virtualbox
+
+```bash
+https://www.virtualbox.org/wiki/Downloads
+```
+
+## 查找vagrant box
+
+> 安装对应虚拟机版本(virtualbox)
+
+```bash
+https://app.vagrantup.com/boxes/search
+```
+
+## 添加vagrant box到本地
+
+```bash
+# 添加本地下载box文件
+vagrant box add centos7 H:\VagrantBox\centos7.box
+# 查看添加是否成功
+vagrant box list
+```
+
+## 创建虚拟机
+
+> 创建存放Vagrantfile的文件夹：H:\Vagrantfile\centos7\
+
+```bash
+# 在vagrantfile文件夹下打开cmd执行如下命令
+vagrant init centos7
+
+# 启动虚拟机
+vagrant up
+
+# 进入虚拟机
+vagrant ssh
+```
+
+> 虚拟机的默认用户是vagrant/vagrant，root用户的密码是vagrant 。
+
 ## 常用虚拟机管理命令
 
 [参考文章](https://segmentfault.com/a/1190000019897182)
@@ -12,7 +58,7 @@
 销毁虚拟机: vagrant destroy
 ```
 
-## 修改 Vagrantfile
+## 示例Vagrantfile
 
 ```yaml
 Vagrant.configure("2") do |config|
