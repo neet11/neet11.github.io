@@ -72,7 +72,7 @@ Vagrant.configure("2") do |config|
       config.vm.define "node#{i}" do |node|
      
       # box配置
-      node.vm.box = "ubuntu/xenial64"
+      node.vm.box = "centos7"
 
       # 设置虚拟机的主机名
       node.vm.hostname = "node#{i}"
