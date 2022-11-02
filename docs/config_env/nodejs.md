@@ -15,7 +15,7 @@ curl -sSL https://my5353.com/confnode | bash /dev/stdin -h
 ## 安装指定版本
 
 ```bash
-curl -sSL https://my5353.com/confnode | bash /dev/stdin -v "v1.16.17.1"
+curl -sSL https://my5353.com/confnode | bash /dev/stdin -v "v16.17.1"
 ```
 
 ## 清除已安装环境
