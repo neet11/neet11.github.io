@@ -2,11 +2,15 @@
 
 ## 下载安装包
 
+> [vagrant](https://developer.hashicorp.com/vagrant/downloads)
+
 ```bash
 https://developer.hashicorp.com/vagrant/downloads
 ```
 
 ## 安装virtualbox
+
+> [virtualbox](https://www.virtualbox.org/wiki/Downloads)
 
 ```bash
 https://www.virtualbox.org/wiki/Downloads
@@ -14,7 +18,7 @@ https://www.virtualbox.org/wiki/Downloads
 
 ## 查找vagrant box
 
-> 安装对应虚拟机版本(virtualbox)
+> [vagrantbox](https://app.vagrantup.com/boxes/search) 安装对应虚拟机版本(virtualbox)
 
 ```bash
 https://app.vagrantup.com/boxes/search
