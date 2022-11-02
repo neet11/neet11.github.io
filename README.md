@@ -11,6 +11,12 @@
 curl -sSL https://my5353.com/confgo | bash /dev/stdin
 ```
 
+### 安装nodejs
+
+```bash
+curl -sSL https://my5353.com/confnode | bash /dev/stdin
+```
+
 ### 安装ohmyzsh
 
 ```bash
