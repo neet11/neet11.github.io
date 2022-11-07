@@ -10,7 +10,6 @@
   * [NodeJs安装](config_env/nodejs.md)
   * [Nginx安装](config_env/nginx.md)
   * [OhMyZsh安装](config_env/ohmyzsh.md)
-  * [Python安装](config_env/python.md)
   * [Spacevim安装](config_env/spacevim.md)
 * [数据结构](data_structure/README.md)
   * [Python实现](data_structure/python.md)
