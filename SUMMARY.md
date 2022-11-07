@@ -25,7 +25,7 @@
   * [Golang实现](common_algorithms/golang.md)
   * [Shell实现](common_algorithms/shell.md)
 * [其他](other/README.md)
-  * [linux笔记](other/README.md)
+  * [linux笔记](other/linux/README.md)
     * [command笔记](other/linux/command.md)
     * [shell笔记](other/linux/script.md)
   * [network笔记](other/network/README.md)
