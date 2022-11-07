@@ -22,32 +22,32 @@
 
 * **显示概要信息**
 
-  ```bash
-  ss -s
-  ```
+```bash
+ss -s
+```
 
 * **查看主机监听的端口**
 
-  ```bash
-  ss -ntl
-  ```
+```bash
+ss -ntl
+```
 
 * **解析 IP 和端口号**
 
-  ```bash
-  ss -tlr
-  ```
+```bash
+ss -tlr
+```
 
 * **查看监听端口的程序名称**
 
-  ```bash
-  ss -tlp
-  ```
+```bash
+ss -tlp
+```
 
 * **查看建立的 TCP 连接**
 
-  ```bash
-  ss -nta
-  ```
+```bash
+ss -nta
+```
 
 <!--endsec-->
