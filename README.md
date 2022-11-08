@@ -2,7 +2,7 @@
 
 [Gitbook](https://neet11.github.io)
 
-<!--sec data-title="环境配置" data-id="section0" data-show=true data-collapse=true ces-->
+<!--sec data-title="环境配置" data-id="section0" data-show=true data-collapse=false ces-->
 ## 环境配置
 
 ### 安装golang
@@ -37,9 +37,9 @@ curl -sSL https://my5353.com/spacevim | bash /dev/stdin
 <!--endsec-->
 
 <!--sec data-title="阅读计划" data-id="section1" data-show=true data-collapse=true ces-->
-|内容|时间|分数|
+|内容|时间|比重|
 |---|---|---|
-|nginx|30min|60|
-|redis|30min|80|
-|language|30|92|
+|nginx|30min|40|
+|redis|30min|30|
+|language|30min|30|
 <!--endsec-->
