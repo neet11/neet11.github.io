@@ -50,7 +50,8 @@
         "code",
         "accordion",
         "sectionx",
-        "expandable-chapters-small"
+        "expandable-chapters-small",
+        "todo"
     ],
 
     "pluginsConfig": {

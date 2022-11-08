@@ -47,3 +47,4 @@
     * [WordList笔记](other/language/wordlist.md)
     * [Phonetic笔记](other/language/phonetic.md)
     * [Article笔记](other/language/article.md)
+* [日志](daily/log.md)
