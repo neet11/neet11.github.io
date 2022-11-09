@@ -8,18 +8,21 @@
 |language|30min|30|
 <!--endsec-->
 
-## week-20221107-20221111
+<!--sec data-title="完成情况" data-id="section1" data-show=true data-collapse=false ces-->
 
-|完成|周一|周二|周三|周四|周五|周六|周日|
+|2022|11/07|11/08|11/09|11/10|11/11|11/12|11/13|
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |nginx|✅|️|️|️|️|️|️|
 |redis|✅|||||||
 |language|✅|||||||
+<!--endsec-->
 
-## plan list
+<!--sec data-title="阅读计划" data-id="section2" data-show=true data-collapse=false ces-->
 
-* [ ] test
-* [ ] test
-* [ ] test
-* [ ] test
-* [ ] test
+* [ ] todo
+* [ ] todo
+* [ ] todo
+* [ ] todo
+* [ ] todo
+
+<!--endsec-->
