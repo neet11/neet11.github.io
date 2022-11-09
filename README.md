@@ -35,11 +35,3 @@ curl -sSL https://my5353.com/nerdfont | bash /dev/stdin
 curl -sSL https://my5353.com/spacevim | bash /dev/stdin
 ```
 <!--endsec-->
-
-<!--sec data-title="阅读计划" data-id="section1" data-show=true data-collapse=true ces-->
-|内容|时间|比重|
-|---|---|---|
-|nginx|30min|40|
-|redis|30min|30|
-|language|30min|30|
-<!--endsec-->
