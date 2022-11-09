@@ -39,7 +39,7 @@ mkdir -p /data/docker/nginx/ssl
 
 ### 配置nginx.conf
 
-```bash
+```nginx
 # vi /data/docker/nginx/conf/nginx.conf
 user nginx;
 worker_processes 4; 
@@ -96,7 +96,7 @@ http {
 }
 ```
 
-```bash
+```nginx
 # vi /data/docker/nginx/conf/vhost/test.conf
 server {
     listen 80;

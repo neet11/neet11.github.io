@@ -40,7 +40,7 @@ The certificate is at "./example.com+5.pem" and the key at "./example.com+5-key.
 
 ### nginx配置证书
 
-```bash
+```nginx
 ssl_certificate /usr/local/etc/nginx/ssl/example.com+5.pem;
 ssl_certificate_key /usr/local/etc/nginx/ssl/example.com+5-key.pem;
 ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
@@ -52,4 +52,26 @@ ssl_ciphers 'ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA
 
 ```bash
 nginx -t && nginx -s reload
+```
+
+### nginx配置pdf预览
+
+```nginx
+server {
+     listen    80;
+     server_name  download.xxx.com;
+ 
+     location ^~ /download {
+         alias html/pdf/;
+         
+         autoindex on;
+         autoindex_exact_size on;
+         autoindex_localtime on;
+         charset utf-8;
+         if ($request_filename ~* ^.*?\.(txt|doc|pdf|rar|gz|zip|docx|exe|xlsx|ppt|pptx)$){
+            add_header Content-Disposition: 'p_w_upload;';
+         }
+     }
+ 
+}
 ```
