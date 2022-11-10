@@ -8,7 +8,7 @@
     "root": ".",
     "links": {
         "sidebar": {
-            "Home": "https://www.google.com"
+            "Home": "https://aomomo.netlify.app/"
         }
     },
     "plugins": [
