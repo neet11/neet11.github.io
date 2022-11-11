@@ -54,43 +54,43 @@ ansible <host-pattern> [option]
 
 ### ansible 命令功能示例
 
-1. 检查管理主机是否可以访问
+1.检查管理主机是否可以访问
 
 ```bash
 ansible all -m ping
 ```
 
-2. 执行命令
+2.执行命令
 
 ```bash
 ansible all -a "/bin/echo hello world"
 ```
 
-3. 复制文件
+3.复制文件
 
 ```bash
 ansible webservers -m copy -a "src=/etc/hosts dest=/tmp/hosts"
 ```
 
-4. 安装软件包
+4.安装软件包
 
 ```bash
 ansible webservers -m yum -a "name=acme state=present"
 ```
 
-5. 添加用户
+5.添加用户
 
 ```bash
 ansible all -m user -a "name=someone password=<crypted password>"
 ```
 
-6. 启动服务
+6.启动服务
 
 ```bash
 ansible webservers -m service -a "name=httpd state=started"
 ```
 
-7. 查看获取到的远程主机信息
+7.查看获取到的远程主机信息
 
 ```bash
 ansible all -m setup
