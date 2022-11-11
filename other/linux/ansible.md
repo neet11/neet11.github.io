@@ -111,9 +111,9 @@ ansible-playbook demo.yml
 * hosts: 被管理主机ip，主机清单中的主机组，全部主机all
 * remote_user: 已某个用户身份执行
 * vars: 变量
-* tasks: 定义顺序执行的action，每个action调用一个模块，playbook核心  
-    1.action语法: module: module_parameter=module_value  
-    2.常用模块: yum、copy、template等，相当于bash脚本中的yum、copy等命令  
+* tasks: 定义顺序执行的action，每个action调用一个模块，playbook核心
+      1.action语法: module: module_parameter=module_value  
+      2.常用模块: yum、copy、template等，相当于bash脚本中的yum、copy等命令  
 * handers: playbook 的事件处理操作，仅在被action触发时执行，多次触发只执行一次，且按照声明顺序执行
 
 ### playbook完整示例如下
