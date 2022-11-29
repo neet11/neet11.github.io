@@ -140,3 +140,13 @@ ansible-playbook demo.yml
     - name: restart apache
       service: name=httpd state=restarted
 ```
+
+## ansible 主机清单
+
+### 什么是主机清单
+
+### 远程主机分组
+
+### 设置连接参数
+
+### 主机清单变量
