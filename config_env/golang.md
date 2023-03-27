@@ -144,7 +144,7 @@ function download_sdk_pkg() {
   print_color "blue" "download golang sdk in ${HOME}/tools/"
   if [ ! -f "${HOME}"/tools/"${go_sdk_package}" ]
   then 
-    wget -P "${HOME}"/tools https://gomirrors.org/dl/go/"${go_sdk_package}"
+    wget -P "${HOME}"/tools https://go.dev/dl/"${go_sdk_package}"
   fi
 }
 
