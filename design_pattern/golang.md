@@ -2,6 +2,8 @@
 
 ## go example
 
+> 统计列表中出现字符的次数并排序
+
 ```go
 package main
 
